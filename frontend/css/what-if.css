@@ -1,0 +1,101 @@
+/* =========================================
+   What-If Analysis Page
+   ========================================= */
+
+.page-header {
+    padding: 50px 20px;
+    background: #f8f9fa;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+
+/* Scenario Cards */
+
+.scenario-card {
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.scenario-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.scenario-card .card-body {
+    padding: 25px;
+}
+
+.scenario-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.scenario-card h5 {
+    margin-bottom: 8px;
+}
+
+.scenario-card p {
+    min-height: 48px;
+}
+
+
+/* Form Controls */
+
+.scenario-card .form-select {
+    min-height: 44px;
+}
+
+.scenario-card .btn {
+    min-height: 44px;
+    font-weight: 500;
+}
+
+
+/* Simulation Result */
+
+#simulationResult {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#simulationResult h5 {
+    font-weight: 700;
+}
+
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #e9ecef;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .page-header {
+        padding: 35px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .scenario-card .card-body {
+        padding: 20px;
+    }
+
+}

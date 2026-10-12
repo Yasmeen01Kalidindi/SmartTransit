@@ -1,0 +1,254 @@
+/* ================================
+   BUSES PAGE
+================================ */
+
+
+/* Page Header */
+
+.bus-header {
+    background: #f4f7fb;
+    padding: 45px 20px;
+    border-bottom: 1px solid #e1e5ea;
+}
+
+.bus-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bus-header p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* Main Section */
+
+.bus-section {
+    padding: 40px 20px;
+}
+
+
+/* Summary */
+
+.summary-row {
+    margin-bottom: 30px;
+}
+
+.bus-summary-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    height: 100%;
+}
+
+.bus-summary-icon {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.bus-summary-card small {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.bus-summary-card h3 {
+    margin: 5px 0 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* Bus Table */
+
+.bus-table-container {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 35px;
+}
+
+.bus-table {
+    margin-bottom: 0;
+
+    vertical-align: middle;
+}
+
+.bus-table thead th {
+    background: #212529;
+
+    color: white;
+
+    padding: 15px;
+
+    white-space: nowrap;
+}
+
+.bus-table tbody td {
+    padding: 15px;
+
+    white-space: nowrap;
+}
+
+.bus-table tbody tr:hover {
+    background: #f7f9fc;
+}
+
+
+/* Occupancy */
+
+.occupancy-container {
+    min-width: 110px;
+}
+
+.occupancy-bar {
+    width: 100%;
+
+    height: 8px;
+
+    background: #e9ecef;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 5px;
+}
+
+.occupancy-fill {
+    height: 100%;
+
+    border-radius: 10px;
+}
+
+.occupancy-text {
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Bus Status */
+
+.bus-status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Capacity Information */
+
+.capacity-info {
+    background: #eef6ff;
+
+    border-left: 5px solid #0d6efd;
+
+    padding: 22px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.capacity-info h3 {
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+.capacity-info p {
+    margin: 0;
+
+    color: #555;
+}
+
+
+/* Capacity Status List */
+
+.capacity-status-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.capacity-status-list span {
+    background: white;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Page Actions */
+
+.page-actions {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .bus-header h1 {
+        font-size: 30px;
+    }
+
+    .bus-section {
+        padding: 25px 15px;
+    }
+
+    .capacity-info {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .capacity-status-list {
+        width: 100%;
+    }
+
+}

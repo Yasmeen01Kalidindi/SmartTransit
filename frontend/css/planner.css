@@ -1,0 +1,177 @@
+/* ================= PAGE HEADER ================= */
+
+.planner-header {
+    background: #eef5ff;
+    padding: 60px 0;
+}
+
+.planner-header p {
+    color: #0d6efd;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.planner-header h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.planner-header span {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* ================= PLANNER SECTION ================= */
+
+.planner-section {
+    padding: 70px 0;
+    background: #f8f9fa;
+}
+
+
+/* ================= PLANNER CARD ================= */
+
+.planner-card {
+    background: white;
+    padding: 45px;
+    border-radius: 18px;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= FORM ================= */
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-select,
+.form-control {
+    padding: 13px;
+    border-radius: 10px;
+}
+
+
+/* ================= ROUTE PREFERENCE ================= */
+
+.route-preference {
+    margin-top: 45px;
+}
+
+.route-preference h3 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.route-preference p {
+    color: #777;
+}
+
+
+/* ================= PREFERENCE GRID ================= */
+
+.preference-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* ================= PREFERENCE CARD ================= */
+
+.preference-card {
+    border: 2px solid #e1e5eb;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.preference-card:hover {
+    border-color: #0d6efd;
+    transform: translateY(-3px);
+}
+
+.preference-card input {
+    margin-bottom: 12px;
+}
+
+.preference-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.preference-title {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.preference-description {
+    color: #777;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+/* ================= TRAFFIC ================= */
+
+.traffic-box {
+    margin-top: 35px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff7e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.traffic-box h4 {
+    margin-bottom: 5px;
+}
+
+.traffic-box p {
+    margin: 0;
+    color: #777;
+}
+
+
+/* ================= BUTTON ================= */
+
+#findRouteButton {
+    padding: 13px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .planner-card {
+        padding: 25px;
+    }
+
+    .preference-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .planner-header h1 {
+        font-size: 34px;
+    }
+
+    .traffic-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bus Routes | SmartTransit</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <link rel="stylesheet"
+          href="../css/navbar.css">
+
+    <link rel="stylesheet"
+          href="../css/bus-routes.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navigation -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="../index.html">
+
+            🚌 SmartTransit
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="../index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="route-planner.html">
+
+                        Plan Route
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="bus-stops.html">
+
+                        Bus Stops
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                       href="bus-routes.html">
+
+                        Bus Routes
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="buses.html">
+
+                        Buses
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="network-map.html">
+
+                        Network Map
+
+                    </a>
+
+                </li>
+                <li class="nav-item">
+    <a class="nav-link" href="admin-login.html">
+        Admin
+    </a>
+</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- Page Header -->
+
+<section class="routes-header">
+
+    <div class="container text-center">
+
+        <h1>Bus Routes</h1>
+
+        <p>
+            Explore available bus routes and their
+            connected stops.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- Main Content -->
+
+<main class="container my-5">
+
+
+    <!-- Summary -->
+
+    <div class="row g-4 mb-4">
+
+
+        <div class="col-md-4">
+
+            <div class="route-summary-card">
+
+                <div class="summary-icon">
+                    🚌
+                </div>
+
+                <h3 id="totalRoutes">
+                    0
+                </h3>
+
+                <p>
+                    Total Routes
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="route-summary-card">
+
+                <div class="summary-icon">
+                    🚏
+                </div>
+
+                <h3 id="totalStops">
+                    0
+                </h3>
+
+                <p>
+                    Connected Stops
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="route-summary-card">
+
+                <div class="summary-icon">
+                    🛣️
+                </div>
+
+                <h3 id="totalDistance">
+                    0 km
+                </h3>
+
+                <p>
+                    Network Route Distance
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Search -->
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-body">
+
+            <div class="row g-3 align-items-center">
+
+                <div class="col-md-8">
+
+                    <input
+                        type="text"
+                        id="routeSearch"
+                        class="form-control"
+                        placeholder="Search by route number or stop name">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <button
+                        class="btn btn-primary w-100"
+                        id="searchButton">
+
+                        Search Routes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Route Table -->
+
+    <div class="card shadow-sm">
+
+        <div class="card-header fw-bold">
+
+            Available Bus Routes
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Route
+                            </th>
+
+                            <th>
+                                Start
+                            </th>
+
+                            <th>
+                                Destination
+                            </th>
+
+                            <th>
+                                Stops
+                            </th>
+
+                            <th>
+                                Distance
+                            </th>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Fare
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="routeTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Route Details -->
+
+    <div
+        id="routeDetails"
+        class="card shadow-sm mt-4 d-none">
+
+        <div class="card-body">
+
+            <h4 class="fw-bold mb-3">
+                Route Details
+            </h4>
+
+            <div id="routeDetailsContent">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Back -->
+
+    <div class="text-center mt-4">
+
+        <a
+            href="route-planner.html"
+            class="btn btn-outline-primary">
+
+            ← Plan a Journey
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- Footer -->
+
+<footer class="text-center py-4">
+
+    <p class="mb-0 text-muted">
+
+        © 2026 SmartTransit |
+        Intelligent Graph-Based Bus Route Optimization System
+
+    </p>
+
+</footer>
+
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="../js/api.js"></script>
+<script src="../js/bus-routes.js"></script>
+</body>
+
+</html>

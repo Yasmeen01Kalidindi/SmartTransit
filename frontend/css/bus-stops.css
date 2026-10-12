@@ -1,0 +1,220 @@
+/* ================================
+   BUS STOPS PAGE
+================================ */
+
+
+/* Page Header */
+
+.bus-stop-header {
+    background: #f4f7fb;
+    padding: 45px 20px;
+    border-bottom: 1px solid #e1e5ea;
+}
+
+.bus-stop-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bus-stop-header p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* Main Section */
+
+.bus-stop-section {
+    padding: 40px 20px;
+}
+
+
+/* Search Box */
+
+.search-box {
+    background: white;
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 30px;
+}
+
+.search-box label {
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+/* Summary Cards */
+
+.summary-row {
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    height: 100%;
+}
+
+.summary-icon {
+    font-size: 32px;
+}
+
+.summary-card small {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.summary-card h3 {
+    margin: 4px 0 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+
+/* Table */
+
+.stop-table-container {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 35px;
+}
+
+.bus-stop-table {
+    margin-bottom: 0;
+
+    vertical-align: middle;
+}
+
+.bus-stop-table thead th {
+    background: #212529;
+
+    color: white;
+
+    padding: 15px;
+
+    white-space: nowrap;
+}
+
+.bus-stop-table tbody td {
+    padding: 15px;
+
+    white-space: nowrap;
+}
+
+.bus-stop-table tbody tr:hover {
+    background: #f7f9fc;
+}
+
+
+/* Stop Status */
+
+.stop-status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Nearest Stop */
+
+.nearest-stop-box {
+    background: #eef6ff;
+
+    border-left: 5px solid #0d6efd;
+
+    padding: 22px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.nearest-stop-box h3 {
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+.nearest-stop-box p {
+    margin: 0;
+
+    color: #555;
+}
+
+
+/* Page Actions */
+
+.page-actions {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .bus-stop-header h1 {
+        font-size: 30px;
+    }
+
+    .bus-stop-section {
+        padding: 25px 15px;
+    }
+
+    .nearest-stop-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .nearest-stop-box button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plan Your Route | SmartTransit</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Planner CSS -->
+    <link rel="stylesheet" href="../css/planner.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="../index.html">
+                🚌 SmartTransit
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="route-planner.html">
+                            Plan Route
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="bus-stops.html">
+                            Bus Stops
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="buses.html">
+                            Buses
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="network-map.html">
+                            Network Map
+                        </a>
+                    </li>
+                   <li class="nav-item">
+
+    <a class="nav-link"
+       href="admin-login.html">
+
+        Admin
+
+    </a>
+
+</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="planner-header">
+
+        <div class="container text-center">
+
+            <p>SMART ROUTE PLANNING</p>
+
+            <h1>Plan Your Journey</h1>
+
+            <span>
+                Choose your starting point and destination
+                to find a suitable bus route.
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ROUTE PLANNER ================= -->
+
+    <section class="planner-section">
+
+        <div class="container">
+
+            <div class="planner-card">
+
+
+                <!-- ================= FROM / TO ================= -->
+
+                <div class="row g-4">
+
+
+                    <!-- FROM -->
+
+                    <div class="col-md-6">
+
+                        <label for="source" class="form-label">
+                            Starting Bus Stop
+                        </label>
+
+                        <select
+                            id="source"
+                            class="form-select">
+
+                            <option value="">
+                                Select starting stop
+                            </option>
+
+                            <option value="SVECW">
+                                SVECW
+                            </option>
+
+                            <option value="Railway Station">
+                                Railway Station
+                            </option>
+
+                            <option value="Town Hall">
+                                Town Hall
+                            </option>
+
+                            <option value="Market">
+                                Market
+                            </option>
+
+                            <option value="Bhimavaram Bus Stand">
+                                Bhimavaram Bus Stand
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- TO -->
+
+                    <div class="col-md-6">
+
+                        <label for="destination" class="form-label">
+                            Destination Bus Stop
+                        </label>
+
+                        <select
+                            id="destination"
+                            class="form-select">
+
+                            <option value="">
+                                Select destination stop
+                            </option>
+
+                            <option value="SVECW">
+                                SVECW
+                            </option>
+
+                            <option value="Railway Station">
+                                Railway Station
+                            </option>
+
+                            <option value="Town Hall">
+                                Town Hall
+                            </option>
+
+                            <option value="Market">
+                                Market
+                            </option>
+
+                            <option value="Bhimavaram Bus Stand">
+                                Bhimavaram Bus Stand
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= DATE / TIME ================= -->
+
+                <div class="row g-4 mt-2">
+
+
+                    <div class="col-md-6">
+
+                        <label
+                            for="travelDate"
+                            class="form-label">
+
+                            Travel Date
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            class="form-control">
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <label
+                            for="travelTime"
+                            class="form-label">
+
+                            Travel Time
+
+                        </label>
+
+                        <input
+                            type="time"
+                            id="travelTime"
+                            class="form-control">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= ROUTE PREFERENCE ================= -->
+
+                <div class="route-preference">
+
+                    <h3>
+                        Choose Route Preference
+                    </h3>
+
+                    <p>
+                        Select what matters most for your journey.
+                    </p>
+
+
+                    <div class="preference-grid">
+
+
+                        <!-- SHORTEST -->
+
+                        <label class="preference-card">
+
+                            <input
+                                type="radio"
+                                name="routePreference"
+                                value="shortest"
+                                checked>
+
+                            <span class="preference-icon">
+                                📍
+                            </span>
+
+                            <span class="preference-title">
+                                Shortest Distance
+                            </span>
+
+                            <span class="preference-description">
+                                Minimize the total travel distance.
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- FASTEST -->
+
+                        <label class="preference-card">
+
+                            <input
+                                type="radio"
+                                name="routePreference"
+                                value="fastest">
+
+                            <span class="preference-icon">
+                                ⚡
+                            </span>
+
+                            <span class="preference-title">
+                                Fastest Route
+                            </span>
+
+                            <span class="preference-description">
+                                Minimize estimated travel time.
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- CHEAPEST -->
+
+                        <label class="preference-card">
+
+                            <input
+                                type="radio"
+                                name="routePreference"
+                                value="cheapest">
+
+                            <span class="preference-icon">
+                                💰
+                            </span>
+
+                            <span class="preference-title">
+                                Cheapest Route
+                            </span>
+
+                            <span class="preference-description">
+                                Minimize the total fare.
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- TRAFFIC -->
+
+                        <label class="preference-card">
+
+                            <input
+                                type="radio"
+                                name="routePreference"
+                                value="traffic">
+
+                            <span class="preference-icon">
+                                🚦
+                            </span>
+
+                            <span class="preference-title">
+                                Traffic-Aware
+                            </span>
+
+                            <span class="preference-description">
+                                Consider current traffic conditions.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= TRAFFIC MODE ================= -->
+
+                <div class="traffic-box">
+
+                    <div>
+
+                        <h4>
+                            🚦 Traffic-Aware Routing
+                        </h4>
+
+                        <p>
+                            Consider traffic conditions when
+                            calculating travel time.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-check form-switch">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="trafficMode">
+
+                        <label
+                            class="form-check-label"
+                            for="trafficMode">
+
+                            Enable
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= ERROR MESSAGE ================= -->
+
+                <div
+                    id="errorMessage"
+                    class="alert alert-danger d-none">
+
+                    Please select both starting point
+                    and destination.
+
+                </div>
+
+
+
+                <!-- ================= BUTTON ================= -->
+
+                <div class="text-center mt-4">
+
+                    <button
+                        type="button"
+                        id="findRouteButton"
+                        class="btn btn-primary btn-lg">
+
+                        🔍 Find Route
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container text-center">
+
+            <h5>🚌 SmartTransit</h5>
+
+            <p>
+                Intelligent Graph-Based Bus Route
+                Optimization System
+            </p>
+
+            <p class="footer-small">
+                ADSA Project • Graph Algorithms •
+                Smart Transportation
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Planner JavaScript -->
+
+   <script src="../js/api.js"></script>
+<script src="../js/route-planner.js"></script>
+
+</body>
+
+</html>

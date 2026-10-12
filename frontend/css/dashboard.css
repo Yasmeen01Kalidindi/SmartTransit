@@ -1,0 +1,83 @@
+/* =========================================
+   ADMIN DASHBOARD
+   ========================================= */
+
+.dashboard-card {
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+}
+
+.dashboard-card h2 {
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   DASHBOARD SECTIONS
+   ========================================= */
+
+section .card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+section .card-header {
+    background: #f8f9fa;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   FORM CONTROLS
+   ========================================= */
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    border-radius: 8px !important;
+}
+
+
+/* =========================================
+   SIMULATION RESULT
+   ========================================= */
+
+#simulationResult,
+#algorithmResult {
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    main {
+        margin-top: 30px !important;
+    }
+
+    section .card-body {
+        padding: 18px;
+    }
+
+}

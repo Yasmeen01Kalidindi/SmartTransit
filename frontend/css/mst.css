@@ -1,0 +1,199 @@
+/* ================= MST PAGE ================= */
+
+.mst-section {
+    padding: 50px 0;
+}
+
+.page-header {
+    padding: 50px 20px;
+    background: #f5f7fb;
+}
+
+.page-header h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* ================= INTRO ================= */
+
+.mst-intro {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.mst-intro h2 {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.mst-intro p {
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* ================= STAT CARDS ================= */
+
+.mst-stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.mst-stat-card .stat-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.mst-stat-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.mst-stat-card p {
+    color: #777;
+    margin-bottom: 0;
+}
+
+
+/* ================= ALGORITHM SECTION ================= */
+
+.algorithm-section {
+    text-align: center;
+}
+
+.algorithm-section > h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.algorithm-section > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.algorithm-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.algorithm-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.algorithm-card h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.algorithm-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.algorithm-card .complexity {
+    margin-top: 15px;
+    color: #333;
+}
+
+.algorithm-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+
+/* ================= MST RESULT ================= */
+
+.mst-result {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    border-left: 5px solid #0d6efd;
+}
+
+.mst-result h2 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.mst-result p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* ================= NETWORK EDGES ================= */
+
+.network-edges {
+    text-align: center;
+}
+
+.network-edges h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.network-edges > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.network-edges table {
+    background: white;
+}
+
+.network-edges th {
+    font-weight: 600;
+}
+
+.network-edges td,
+.network-edges th {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 30px;
+    padding: 25px 0;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .page-header {
+        padding: 35px 15px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .mst-section {
+        padding: 35px 15px;
+    }
+
+    .algorithm-card {
+        padding: 25px 20px;
+    }
+
+}

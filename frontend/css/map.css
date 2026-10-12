@@ -1,0 +1,198 @@
+/* =========================================
+   NETWORK MAP PAGE
+   ========================================= */
+
+.analytics-card {
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-3px);
+}
+
+.analytics-card h2 {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   GRAPH CONTAINER
+   ========================================= */
+
+#networkGraph {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+
+/* SVG containing graph roads */
+
+#networkSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+/* =========================================
+   GRAPH EDGES
+   ========================================= */
+
+.network-edge {
+    stroke: #6c757d;
+    stroke-width: 4;
+}
+
+.blocked-edge {
+    stroke: #dc3545;
+    stroke-width: 4;
+    stroke-dasharray: 10 7;
+}
+
+
+/* =========================================
+   GRAPH NODES
+   ========================================= */
+
+.network-node {
+    position: absolute;
+
+    width: 120px;
+    min-height: 60px;
+
+    transform: translate(-50%, -50%);
+
+    background: white;
+    border: 3px solid #0d6efd;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    z-index: 2;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.network-node:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   NODE STATUS
+   ========================================= */
+
+.network-node.blocked {
+    border-color: #dc3545;
+}
+
+.network-node.selected {
+    border-color: #198754;
+}
+
+
+/* =========================================
+   LEGEND
+   ========================================= */
+
+.legend-node {
+    display: inline-block;
+
+    width: 18px;
+    height: 18px;
+
+    border: 3px solid #0d6efd;
+    background: white;
+
+    border-radius: 50%;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+}
+
+
+.legend-road {
+    display: inline-block;
+
+    width: 35px;
+    height: 4px;
+
+    background: #6c757d;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+}
+
+
+.legend-blocked {
+    display: inline-block;
+
+    width: 35px;
+    height: 4px;
+
+    background: #dc3545;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================
+   NETWORK DETAILS
+   ========================================= */
+
+#mostConnectedStop,
+#networkDistance,
+#activeBuses {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    #networkGraph {
+        height: 500px;
+    }
+
+    .network-node {
+        width: 100px;
+        font-size: 11px;
+    }
+
+}

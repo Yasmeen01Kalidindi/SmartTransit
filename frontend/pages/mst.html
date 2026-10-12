@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Minimum Spanning Tree | SmartTransit</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- MST CSS -->
+    <link rel="stylesheet" href="../css/mst.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a
+                class="navbar-brand fw-bold"
+                href="../index.html">
+
+                🚌 SmartTransit
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="route-planner.html">
+
+                            Plan Route
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="bus-stops.html">
+
+                            Bus Stops
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="buses.html">
+
+                            Buses
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="network-map.html">
+
+                            Network Map
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin-login.html">
+
+                            Admin
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <div class="container text-center">
+
+            <h1>🌳 Minimum Spanning Tree</h1>
+
+            <p>
+                Optimize the bus network by connecting all
+                stops with minimum total road distance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <section class="mst-section">
+
+        <div class="container">
+
+
+            <!-- Explanation -->
+
+            <div class="mst-intro">
+
+                <h2>What is Minimum Spanning Tree?</h2>
+
+                <p>
+                    A Minimum Spanning Tree (MST) is a subset
+                    of the network connections that connects
+                    all bus stops with the minimum possible
+                    total distance and without forming cycles.
+                </p>
+
+                <p>
+                    SmartTransit can use MST algorithms to
+                    analyze how efficiently the bus network
+                    connects its stops.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= STAT CARDS ================= -->
+
+            <div class="row g-4 mt-2">
+
+
+                <div class="col-md-4">
+
+                    <div class="mst-stat-card">
+
+                        <div class="stat-icon">
+                            📍
+                        </div>
+
+                        <h3 id="mstTotalStops">
+                            6
+                        </h3>
+
+                        <p>Total Stops</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-4">
+
+                    <div class="mst-stat-card">
+
+                        <div class="stat-icon">
+                            🛣️
+                        </div>
+
+                        <h3 id="mstTotalRoads">
+                            8
+                        </h3>
+
+                        <p>Total Roads</p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-4">
+
+                    <div class="mst-stat-card">
+
+                        <div class="stat-icon">
+                            📏
+                        </div>
+
+                        <h3 id="mstTotalDistance">
+                            7.5 km
+                        </h3>
+
+                        <p>MST Total Distance</p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= ALGORITHM SECTION ================= -->
+
+            <div class="algorithm-section mt-5">
+
+                <h2>Choose MST Algorithm</h2>
+
+                <p>
+                    Select an algorithm to calculate the
+                    Minimum Spanning Tree of the bus network.
+                </p>
+
+
+                <div class="row g-4">
+
+
+                    <!-- Prim -->
+
+                    <div class="col-md-6">
+
+                        <div class="algorithm-card">
+
+                            <div class="algorithm-icon">
+                                🌱
+                            </div>
+
+                            <h3>Prim's Algorithm</h3>
+
+                            <p>
+                                Starts from one vertex and
+                                repeatedly adds the minimum
+                                weight edge connecting a new
+                                vertex to the existing tree.
+                            </p>
+
+                            <p class="complexity">
+                                Time Complexity:
+                                <strong>O(E log V)</strong>
+                            </p>
+
+                            <button
+                                id="primButton"
+                                class="btn btn-primary">
+
+                                Calculate using Prim
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Kruskal -->
+
+                    <div class="col-md-6">
+
+                        <div class="algorithm-card">
+
+                            <div class="algorithm-icon">
+                                🔗
+                            </div>
+
+                            <h3>Kruskal's Algorithm</h3>
+
+                            <p>
+                                Sorts all network edges by
+                                weight and adds the smallest
+                                edge that does not create a
+                                cycle.
+                            </p>
+
+                            <p class="complexity">
+                                Time Complexity:
+                                <strong>O(E log E)</strong>
+                            </p>
+
+                            <button
+                                id="kruskalButton"
+                                class="btn btn-success">
+
+                                Calculate using Kruskal
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= RESULT ================= -->
+
+            <div
+                id="mstResult"
+                class="mst-result mt-5">
+
+                <h2>🌳 MST Result</h2>
+
+                <p>
+                    Select an algorithm above to calculate
+                    the Minimum Spanning Tree.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= NETWORK EDGES ================= -->
+
+            <div class="network-edges mt-5">
+
+                <h2>Network Connections</h2>
+
+                <p>
+                    Current road connections considered for
+                    MST calculation:
+                </p>
+
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>From</th>
+
+                                <th>To</th>
+
+                                <th>Distance</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td>SVECW</td>
+                                <td>Railway Station</td>
+                                <td>2.0 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>SVECW</td>
+                                <td>College Road</td>
+                                <td>1.4 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>Railway Station</td>
+                                <td>Town Hall</td>
+                                <td>1.2 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>College Road</td>
+                                <td>Town Hall</td>
+                                <td>1.8 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>Town Hall</td>
+                                <td>Market</td>
+                                <td>1.0 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>Market</td>
+                                <td>Bhimavaram Bus Stand</td>
+                                <td>1.1 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>Town Hall</td>
+                                <td>Bhimavaram Bus Stand</td>
+                                <td>2.0 km</td>
+                            </tr>
+
+                            <tr>
+                                <td>Railway Station</td>
+                                <td>Market</td>
+                                <td>1.7 km</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= BACK BUTTON ================= -->
+
+            <div class="text-center mt-5">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="btn btn-outline-primary">
+
+                    ← Back to Admin Dashboard
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container text-center">
+
+            <h5>🚌 SmartTransit</h5>
+
+            <p>
+                Intelligent Graph-Based Bus Route
+                Optimization System
+            </p>
+
+            <p class="footer-small">
+                ADSA Project • Graph Algorithms •
+                Smart Transportation
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- MST JavaScript -->
+
+    <script src="../js/mst.js"></script>
+
+
+</body>
+
+</html>

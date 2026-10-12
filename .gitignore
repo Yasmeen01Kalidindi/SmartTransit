@@ -1,0 +1,20 @@
+
+# Java and Maven build files
+**/target/
+**/*.class
+
+# Local secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Logs and backups
+*.log
+backend_backup/
+*.zip

@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - SmartTransit</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="../index.html">
+                SmartTransit Admin
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#adminNavbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="adminNavbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="network-map.html">
+                            Network Map
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="bus-stops.html">
+                            Bus Stops
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="buses.html">
+                            Buses
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container my-5">
+
+        <!-- PAGE HEADING -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">
+                Admin Dashboard
+            </h1>
+
+            <p class="text-muted">
+                Manage and monitor the SmartTransit transportation network.
+            </p>
+
+        </div>
+
+
+        <!-- ================= NETWORK OVERVIEW ================= -->
+
+        <section class="mb-5">
+
+            <h3 class="fw-bold mb-3">
+                Network Overview
+            </h3>
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+
+                    <div class="card shadow-sm dashboard-card text-center">
+
+                        <div class="card-body">
+
+                            <h6 class="text-muted">
+                                Total Bus Stops
+                            </h6>
+
+                            <h2 id="adminTotalStops">
+                                6
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="card shadow-sm dashboard-card text-center">
+
+                        <div class="card-body">
+
+                            <h6 class="text-muted">
+                                Total Roads
+                            </h6>
+
+                            <h2 id="adminTotalRoads">
+                                8
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="card shadow-sm dashboard-card text-center">
+
+                        <div class="card-body">
+
+                            <h6 class="text-muted">
+                                Active Buses
+                            </h6>
+
+                            <h2 id="adminActiveBuses">
+                                4
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="card shadow-sm dashboard-card text-center">
+
+                        <div class="card-body">
+
+                            <h6 class="text-muted">
+                                Blocked Roads
+                            </h6>
+
+                            <h2 id="adminBlockedRoads">
+                                1
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BUS STOP MANAGEMENT ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    Bus Stop Management
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Add, update, close or restore bus stops in the
+                        transportation network.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <label class="form-label">
+                                Stop Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="stopName"
+                                placeholder="Enter bus stop name"
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="stopLocation"
+                                placeholder="Enter location"
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label">
+                                Stop Status
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="stopStatus"
+                            >
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Closed">
+                                    Closed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-primary me-2"
+                            id="addStopButton"
+                        >
+                            Add Stop
+                        </button>
+
+                        <button
+                            class="btn btn-warning"
+                            id="updateStopButton"
+                        >
+                            Update Stop
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ROAD MANAGEMENT ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    Road / Edge Management
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Manage graph edges connecting bus stops.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <label class="form-label">
+                                From Stop
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="roadFrom"
+                            >
+
+                                <option value="">
+                                    Select source stop
+                                </option>
+
+                                <option value="SVECW">
+                                    SVECW
+                                </option>
+
+                                <option value="Railway Station">
+                                    Railway Station
+                                </option>
+
+                                <option value="Town Hall">
+                                    Town Hall
+                                </option>
+
+                                <option value="Market">
+                                    Market
+                                </option>
+
+                                <option value="Bhimavaram Bus Stand">
+                                    Bhimavaram Bus Stand
+                                </option>
+
+                                <option value="College Road">
+                                    College Road
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label">
+                                To Stop
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="roadTo"
+                            >
+
+                                <option value="">
+                                    Select destination stop
+                                </option>
+
+                                <option value="SVECW">
+                                    SVECW
+                                </option>
+
+                                <option value="Railway Station">
+                                    Railway Station
+                                </option>
+
+                                <option value="Town Hall">
+                                    Town Hall
+                                </option>
+
+                                <option value="Market">
+                                    Market
+                                </option>
+
+                                <option value="Bhimavaram Bus Stand">
+                                    Bhimavaram Bus Stand
+                                </option>
+
+                                <option value="College Road">
+                                    College Road
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <label class="form-label">
+                                Distance (km)
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="roadDistance"
+                                placeholder="Example: 2.5"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-primary me-2"
+                            id="addRoadButton"
+                        >
+                            Add Road
+                        </button>
+
+                        <button
+                            class="btn btn-danger"
+                            id="deleteRoadButton"
+                        >
+                            Delete Road
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ROAD BLOCKING ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    Emergency Road Control
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Temporarily block or restore roads during
+                        emergencies, accidents or road maintenance.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Select Road
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="controlRoad"
+                            >
+
+                                <option value="">
+                                    Select road
+                                </option>
+
+                                <option value="SVECW-Railway Station">
+                                    SVECW → Railway Station
+                                </option>
+
+                                <option value="SVECW-College Road">
+                                    SVECW → College Road
+                                </option>
+
+                                <option value="Railway Station-Town Hall">
+                                    Railway Station → Town Hall
+                                </option>
+
+                                <option value="College Road-Town Hall">
+                                    College Road → Town Hall
+                                </option>
+
+                                <option value="Town Hall-Market">
+                                    Town Hall → Market
+                                </option>
+
+                                <option value="Market-Bus Stand">
+                                    Market → Bus Stand
+                                </option>
+
+                                <option value="Town Hall-Bus Stand">
+                                    Town Hall → Bus Stand
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Road Status
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="roadStatus"
+                            >
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Blocked">
+                                    Blocked
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-danger me-2"
+                            id="blockRoadButton"
+                        >
+                            Block Road
+                        </button>
+
+                        <button
+                            class="btn btn-success"
+                            id="restoreRoadButton"
+                        >
+                            Restore Road
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRAFFIC MANAGEMENT ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    Traffic Management
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Update traffic conditions used for
+                        traffic-aware route calculation.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Select Road
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="trafficRoad"
+                            >
+
+                                <option value="">
+                                    Select road
+                                </option>
+
+                                <option value="SVECW-Railway Station">
+                                    SVECW → Railway Station
+                                </option>
+
+                                <option value="Railway Station-Town Hall">
+                                    Railway Station → Town Hall
+                                </option>
+
+                                <option value="Town Hall-Market">
+                                    Town Hall → Market
+                                </option>
+
+                                <option value="Market-Bus Stand">
+                                    Market → Bus Stand
+                                </option>
+
+                                <option value="Town Hall-Bus Stand">
+                                    Town Hall → Bus Stand
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Traffic Level
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="trafficLevel"
+                            >
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                                <option value="Medium">
+                                    Medium
+                                </option>
+
+                                <option value="High">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-warning"
+                            id="updateTrafficButton"
+                        >
+                            Update Traffic
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BUS CAPACITY ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    Bus Capacity Management
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Monitor and update current bus occupancy.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Select Bus
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="capacityBus"
+                            >
+
+                                <option value="">
+                                    Select bus
+                                </option>
+
+                                <option value="101">
+                                    Bus 101
+                                </option>
+
+                                <option value="102">
+                                    Bus 102
+                                </option>
+
+                                <option value="103">
+                                    Bus 103
+                                </option>
+
+                                <option value="104">
+                                    Bus 104
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Current Occupied Seats
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="occupiedSeats"
+                                min="0"
+                                placeholder="Enter occupied seats"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-primary"
+                            id="updateCapacityButton"
+                        >
+                            Update Capacity
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHAT-IF SIMULATION ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    What-If Simulation
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Simulate network changes and observe their
+                        effect on route planning.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Simulation Scenario
+                            </label>
+
+                            <select
+                                class="form-select"
+                                id="simulationType"
+                            >
+
+                                <option value="">
+                                    Select scenario
+                                </option>
+
+                                <option value="roadBlocked">
+                                    Road Blocked
+                                </option>
+
+                                <option value="stopClosed">
+                                    Bus Stop Closed
+                                </option>
+
+                                <option value="trafficIncreased">
+                                    Traffic Increased
+                                </option>
+
+                                <option value="busUnavailable">
+                                    Bus Unavailable
+                                </option>
+
+                                <option value="newRoad">
+                                    New Road Added
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Simulation Value
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="simulationValue"
+                                placeholder="Example: Town Hall"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-3">
+
+                        <button
+                            class="btn btn-dark"
+                            id="runSimulationButton"
+                        >
+                            Run Simulation
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="simulationResult"
+                        class="alert alert-secondary mt-3 d-none"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GRAPH ALGORITHMS ================= -->
+
+        <section class="mb-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-header fw-bold">
+                    Graph Algorithms & Network Planning
+                </div>
+
+                <div class="card-body">
+
+                    <p class="text-muted">
+                        Run graph algorithms for network analysis
+                        and infrastructure planning.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <button
+                                class="btn btn-outline-primary w-100"
+                                id="bfsButton"
+                            >
+                                Run BFS
+                            </button>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <button
+                                class="btn btn-outline-primary w-100"
+                                id="dfsButton"
+                            >
+                                Run DFS
+                            </button>
+
+                        </div>
+        <div class="col-md-4">
+
+    <button
+        class="btn btn-outline-success w-100"
+        id="mstButton">
+
+        Generate MST
+
+    </button>
+
+</div>
+
+
+<div class="col-md-4">
+
+    <a
+        href="mst.html"
+        class="btn btn-outline-primary w-100">
+
+        🌳 Open MST Analysis
+
+    </a>
+
+</div>
+
+
+<div class="col-md-4">
+
+    <a
+        href="what-if.html"
+        class="btn btn-outline-warning w-100">
+
+        🔍 What-If Analysis
+
+    </a>
+
+</div>                        
+                    </div>
+
+
+                    <div
+                        id="algorithmResult"
+                        class="alert alert-info mt-4 d-none"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+              <!-- ================= QUICK LINKS ================= -->
+
+<section class="mb-4">
+
+    <h3 class="fw-bold mb-3">
+        Quick Access
+    </h3>
+
+    <div class="row g-3">
+
+        <div class="col-md-3">
+
+            <a
+                href="network-map.html"
+                class="btn btn-outline-dark w-100">
+
+                View Network Map
+
+            </a>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <a
+                href="buses.html"
+                class="btn btn-outline-dark w-100">
+
+                View Bus Fleet
+
+            </a>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <a
+                href="bus-stops.html"
+                class="btn btn-outline-dark w-100">
+
+                View Bus Stops
+
+            </a>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <a
+                href="bus-routes.html"
+                class="btn btn-outline-dark w-100">
+
+                🚌 Bus Routes
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+
+        <p class="mb-0">
+            SmartTransit - Admin Control Center
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+   <!-- API JavaScript -->
+<script src="../js/api.js"></script>
+
+<!-- Admin JavaScript -->
+<script src="../js/admin.js"></script>
+</body>
+
+</html>

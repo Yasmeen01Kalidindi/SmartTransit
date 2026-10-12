@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bus Stops - SmartTransit</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <!-- Bus Stops CSS -->
+    <link rel="stylesheet"
+          href="../css/bus-stops.css">
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold"
+               href="../index.html">
+                SmartTransit
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse"
+                 id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="../index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="route-planner.html">
+                            Plan Route
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="route-comparison.html">
+                            Compare Routes
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                           href="bus-stops.html">
+                            Bus Stops
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="buses.html">
+                            Buses
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="network-map.html">
+                            Network Map
+                        </a>
+
+                    </li>
+
+                <li class="nav-item">
+    <a class="nav-link" href="admin-login.html">
+        Admin
+    </a>
+</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="bus-stop-header">
+
+        <div class="container text-center">
+
+            <h1>Bus Stops</h1>
+
+            <p>
+                Explore the bus stops available in the
+                SmartTransit network.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BUS STOP SECTION ================= -->
+
+    <section class="bus-stop-section">
+
+        <div class="container">
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <label for="stopSearch">
+                    Search Bus Stop
+                </label>
+
+                <input
+                    type="text"
+                    id="stopSearch"
+                    class="form-control"
+                    placeholder="Enter bus stop name...">
+
+            </div>
+
+
+
+            <!-- Network Summary -->
+
+            <div class="row g-4 summary-row">
+
+
+                <div class="col-md-4">
+
+                    <div class="summary-card">
+
+                        <span class="summary-icon">
+                            🚌
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Total Stops
+                            </small>
+
+                            <h3 id="totalStops">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-4">
+
+                    <div class="summary-card">
+
+                        <span class="summary-icon">
+                            🔗
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Connected Stops
+                            </small>
+
+                            <h3 id="connectedStops">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-4">
+
+                    <div class="summary-card">
+
+                        <span class="summary-icon">
+                            📍
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Network Area
+                            </small>
+
+                            <h3>
+                                Bhimavaram
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Bus Stop Table -->
+
+            <div class="stop-table-container">
+
+                <div class="table-responsive">
+
+                    <table class="table bus-stop-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Stop ID
+                                </th>
+
+                                <th>
+                                    Bus Stop
+                                </th>
+
+                                <th>
+                                    Location
+                                </th>
+
+                                <th>
+                                    Connected Roads
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="busStopTableBody">
+
+                            <!-- JavaScript will add stops here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Nearest Stop -->
+
+            <div class="nearest-stop-box">
+
+                <div>
+
+                    <h3>
+                        📍 Find Nearest Bus Stop
+                    </h3>
+
+                    <p>
+                        Use predefined location data to
+                        identify the nearest bus stop.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="nearestStopButton"
+                    class="btn btn-primary">
+
+                    Find Nearest Stop
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Back Button -->
+
+            <div class="page-actions">
+
+                <a
+                    href="route-planner.html"
+                    class="btn btn-outline-primary">
+
+                    ← Plan a Route
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p class="mb-0">
+
+            SmartTransit © 2026 |
+            Graph-Based Bus Route Optimization
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Bus Stops JavaScript -->
+
+   <script src="../js/api.js"></script>
+<script src="../js/bus-stops.js"></script>
+</body>
+
+</html>

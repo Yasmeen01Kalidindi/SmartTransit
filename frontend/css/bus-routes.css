@@ -1,0 +1,141 @@
+/* =========================================
+   Bus Routes Page
+   ========================================= */
+
+.routes-header {
+    padding: 50px 20px;
+    background: #f8f9fa;
+}
+
+.routes-header h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.routes-header p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+
+/* Summary Cards */
+
+.route-summary-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.summary-icon {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.route-summary-card h3 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.route-summary-card p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+
+/* Route Table */
+
+.table th {
+    white-space: nowrap;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.route-number {
+    font-weight: 700;
+}
+
+
+/* Status */
+
+.route-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-active {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-delayed {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.status-inactive {
+    background: #f8d7da;
+    color: #842029;
+}
+
+
+/* Route Details */
+
+#routeDetails {
+    border-radius: 12px;
+}
+
+.route-stop {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 5px;
+    background: #f1f3f5;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.route-arrow {
+    margin: 0 5px;
+    color: #6c757d;
+}
+
+
+/* Search */
+
+#routeSearch {
+    min-height: 44px;
+}
+
+#searchButton {
+    min-height: 44px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .routes-header {
+        padding: 35px 15px;
+    }
+
+    .routes-header h1 {
+        font-size: 28px;
+    }
+
+    .route-summary-card {
+        padding: 20px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+}

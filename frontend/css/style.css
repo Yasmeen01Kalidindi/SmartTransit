@@ -1,0 +1,278 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f8f9fa;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    margin-left: 15px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-section {
+    background: linear-gradient(135deg, #071952, #0b3d91);
+    color: white;
+    padding: 100px 0;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-tag {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-section h1 span {
+    display: block;
+    color: #63d9ff;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 25px 0;
+}
+
+
+/* ================= GRAPH VISUAL ================= */
+
+.bus-icon {
+    font-size: 100px;
+    margin-bottom: 30px;
+}
+
+.graph-preview {
+    width: 300px;
+    height: 220px;
+    position: relative;
+    margin: auto;
+}
+
+.node {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    color: #0b3d91;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.node-1 {
+    top: 20px;
+    left: 20px;
+}
+
+.node-2 {
+    top: 20px;
+    right: 20px;
+}
+
+.node-3 {
+    bottom: 20px;
+    left: 20px;
+}
+
+.node-4 {
+    bottom: 20px;
+    right: 20px;
+}
+
+.line {
+    position: absolute;
+    height: 4px;
+    background: white;
+    opacity: 0.7;
+}
+
+.line-1 {
+    width: 210px;
+    top: 43px;
+    left: 45px;
+}
+
+.line-2 {
+    width: 210px;
+    bottom: 43px;
+    left: 45px;
+}
+
+.line-3 {
+    width: 130px;
+    transform: rotate(90deg);
+    top: 108px;
+    left: 85px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.features-section,
+.how-section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading p {
+    color: #0d6efd;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* ================= FEATURE CARDS ================= */
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* ================= HOW IT WORKS ================= */
+
+.how-section {
+    background: #eef5ff;
+}
+
+.step-number {
+    font-size: 40px;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.how-section h3 {
+    font-size: 22px;
+}
+
+.how-section p {
+    color: #666;
+}
+
+
+/* ================= CTA ================= */
+
+.cta-section {
+    background: #0d6efd;
+    color: white;
+    padding: 80px 0;
+}
+
+.cta-section h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #111827;
+    color: white;
+    padding: 40px 0;
+}
+
+footer p {
+    color: #bbb;
+}
+
+.footer-small {
+    font-size: 14px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 70px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .graph-preview {
+        margin-top: 50px;
+    }
+
+}
